@@ -1,0 +1,16 @@
+.todo {
+  display: flex;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  position: relative;
+  &__task {
+    font-size: 1rem;
+    &--done {
+      text-decoration: line-through;
+    }
+  }
+  &__removeBtn {
+    position: absolute;
+    right: 0;
+  }
+}
