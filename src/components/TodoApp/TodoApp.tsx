@@ -4,6 +4,7 @@ import { TodosContext } from '../../contexts/TodosContext';
 import { TodosDispatchContext } from '../../contexts/TodosDispatchContext';
 import { AddTodo } from '../AddTodo/AddTodo';
 import { Todos } from '../Todos/Todos';
+import './TodoApp.scss';
 
 export const TodoApp = () => {
   const [todos, dispatch] = useReducer(TodosReducer, []);
@@ -12,8 +13,12 @@ export const TodoApp = () => {
     <>
       <TodosContext.Provider value={todos}>
         <TodosDispatchContext.Provider value={dispatch}>
-          <AddTodo></AddTodo>
-          <Todos></Todos>
+          <main className='container'>
+            <section className='content'>
+              <AddTodo></AddTodo>
+              <Todos></Todos>
+            </section>
+          </main>
         </TodosDispatchContext.Provider>
       </TodosContext.Provider>
     </>
